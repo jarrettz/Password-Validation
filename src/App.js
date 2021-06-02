@@ -62,8 +62,8 @@ const App = () => {
           <li>The password contains an uppercase letter</li>
           <li>The password contains a lowercase letter</li>
         </ul>
-        <p>A weak password does not meet any requirements</p>
-        <p>A stronger password meets at least 1 requirement</p>
+        <p>A weak password meets 1 requirement</p>
+        <p>A stronger password meets 2 requirements</p>
         <p>A strong password meets at least 3 requirements</p>
     </div>
   );
