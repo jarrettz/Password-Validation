@@ -19,19 +19,19 @@ const App = () => {
     if (password.length >= 5) {
       counter++;
     }
-    if (password.toUpperCase() != password) {
+    if (password.toUpperCase() !== password) {
       counter++;
     }
-    if (password.toLowerCase() != password) {
+    if (password.toLowerCase() !== password) {
       counter++;
     }
-    if (/\d/g.test(password) == true) {
+    if (/\d/g.test(password) === true) {
       counter++;
     }
 
-    if (counter == 1) {
+    if (counter === 1) {
       setWeak(true);
-    } else if (counter == 2) {
+    } else if (counter === 2) {
       setStronger(true);
     } else if (counter >= 3) {
       setStrong(true);
