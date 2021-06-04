@@ -29,8 +29,8 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="app">
-        <h1>Password Validation</h1>
+      <h1>Password Validation</h1>
+      <div className="password-strength">
         <TextField
           id="standard-password-input"
           label="Password"
@@ -46,12 +46,14 @@ const App = () => {
         {counter>=3 && <Alert severity="success">Strong Password!</Alert>}
       </div>
       <h2>Password Requirements</h2>
-        <ul>
-          <li>The password contains at least 5 characters</li>
-          <li>The password contains at least 1 number</li>
-          <li>The password contains an uppercase letter</li>
-          <li>The password contains a lowercase letter</li>
-        </ul>
+        <div>
+          <ul>
+            <li>The password contains at least 5 characters</li>
+            <li>The password contains at least 1 number</li>
+            <li>The password contains an uppercase letter</li>
+            <li>The password contains a lowercase letter</li>
+          </ul>
+        </div>
         <p>A weak password meets 1 requirement</p>
         <p>A stronger password meets 2 requirements</p>
         <p>A strong password meets at least 3 requirements</p>

@@ -1,11 +1,18 @@
 .container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-}
-
-.app {
-  display: flex;
+  align-items: center;
   flex-direction: column;
   text-align: center;
+}
+
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
 }
