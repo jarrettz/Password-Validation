@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 const PasswordStrength = ({ counter }) => {
   const[width, setWidth] = useState(0);
+  const[color, setColor] = useState('');
 
   const setPasswordStrength = () => ({
     width: `${width}%`,
-    background: "yellow",
+    background: `${color}`,
     height: "10px"
   });
 
@@ -16,15 +17,19 @@ const PasswordStrength = ({ counter }) => {
         break;
       case 1:
         setWidth(33);
+        setColor('red');
         break;
       case 2:
         setWidth(66);
+        setColor('orange');
         break;
       case 3:
         setWidth(100);
+        setColor('yellow');
         break;
       case 4:
         setWidth(100);
+        setColor('yellow');
         break;
       default:
         setWidth(0);
