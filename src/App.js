@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@material-ui/core/TextField';
 import Alert from '@material-ui/lab/Alert';
 import './App.css';
+import PasswordStrength from './components/PasswordStrength';
 
 
 const App = () => {
   const[password, setPassword] = useState('');
-  const[weak, setWeak] = useState(false);
-  const[stronger, setStronger] = useState(false);
-  const[strong, setStrong] = useState(false);
+  const[counter, setCounter] = useState(0);
 
   useEffect(() => {
-    setWeak(false);
-    setStronger(false);
-    setStrong(false);
-
     let counter = 0;
     if (password.length >= 5) {
       counter++;
@@ -28,14 +23,8 @@ const App = () => {
     if (/\d/g.test(password) === true) {
       counter++;
     }
+    setCounter(counter);
 
-    if (counter === 1) {
-      setWeak(true);
-    } else if (counter === 2) {
-      setStronger(true);
-    } else if (counter >= 3) {
-      setStrong(true);
-    }
   }, [password])
 
   return (
@@ -51,9 +40,10 @@ const App = () => {
           value={password}
           onChange={e=>setPassword(e.target.value)}
         />
-        {weak && <Alert severity="error">Weak password!</Alert>}
-        {stronger && <Alert severity="error">Could be stronger!</Alert>}
-        {strong && <Alert severity="success">Strong Password!</Alert>}
+        <PasswordStrength counter={counter}/>
+        {counter===1 && <Alert severity="error">Weak password!</Alert>}
+        {counter===2 && <Alert severity="error">Could be stronger!</Alert>}
+        {counter>=3 && <Alert severity="success">Strong Password!</Alert>}
       </div>
       <h2>Password Requirements</h2>
         <ul>
